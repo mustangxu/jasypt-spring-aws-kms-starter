@@ -79,4 +79,7 @@
             </plugin>
         </plugins>
     </build>
+    <properties>
+    	<snakeyaml.version>2.0</snakeyaml.version>
+    </properties>
 </project>
