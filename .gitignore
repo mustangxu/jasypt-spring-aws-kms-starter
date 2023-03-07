@@ -4,3 +4,5 @@
 .factorypath
 demo/target
 nacos-jasypt-aws-kms-starter/target
+.idea
+jasypt-spring-aws-kms-starter/target

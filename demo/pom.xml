@@ -2,8 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>demo</artifactId>
     <parent>
-        <groupId>com.jayxu.nacos</groupId>
-        <artifactId>nacos-jasypt-aws-kms-starter-parent</artifactId>
+        <groupId>com.jayxu</groupId>
+        <artifactId>jasypt-spring-aws-kms-starter-parent</artifactId>
         <version>0.3</version>
     </parent>
     <dependencies>
@@ -21,8 +21,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.jayxu.nacos</groupId>
-            <artifactId>nacos-jasypt-aws-kms-starter</artifactId>
+            <groupId>com.jayxu</groupId>
+            <artifactId>jasypt-spring-aws-kms-starter</artifactId>
             <version>0.3</version>
         </dependency>
         <dependency>
