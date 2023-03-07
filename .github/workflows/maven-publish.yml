@@ -23,13 +23,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
         server-username: OSSRH_USERNAME
         server-password: OSSRH_PASSWORD
 
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -DskipTests 
+    - name: Publish to Sonatype Packages Apache Maven
+      run: mvn deploy -DskipTests 
       env:
-        GITHUB_TOKEN: ${{ github.token }}
         OSSRH_USERNAME: jayxu
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
