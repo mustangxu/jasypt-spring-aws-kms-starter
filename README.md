@@ -1,5 +1,7 @@
 This project add support to jasypt-spring which utlize aws KMS for encrypt / decrypt
 
+[![CodeQL](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/codeql.yml/badge.svg)](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/codeql.yml)
+
 ## Usage
 1. import lib in maven
 ```xml
