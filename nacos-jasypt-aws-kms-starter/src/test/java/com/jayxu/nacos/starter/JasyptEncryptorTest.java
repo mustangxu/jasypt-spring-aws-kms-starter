@@ -17,9 +17,5 @@ public class JasyptEncryptorTest {
 
         System.out.println(enc.decrypt(
             "wacUEQ0x+sgDSEM+swIPoQixmLoS+nzSDG4xdvtPv0lNDbfSgzWd5Hk3N2cgS8BC"));
-
-        System.out.println(enc.encrypt("AKIAZRCIYFAGNVGLWVGI"));
-        System.out
-            .println(enc.encrypt("f8bxvTKBNb8KU/qSsb4SS23tn9PIK9HnvuWdNag5"));
     }
 }
