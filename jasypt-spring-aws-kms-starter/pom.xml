@@ -21,16 +21,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <scope>provided</scope>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/kms -->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
