@@ -42,25 +42,22 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>pl.project13.maven</groupId>
-                <artifactId>git-commit-id-plugin</artifactId>
-                <configuration>
-                    <offline>true</offline>
-                    <runOnlyOnce>true</runOnlyOnce>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
     <modules>
         <module>demo</module>
-        <module>nacos-jasypt-aws-kms-starter</module>
+        <module>jasypt-spring-aws-kms-starter</module>
     </modules>
     <url>https://github.com/mustangxu/jasypt-spring-aws-kms-starter</url>
     <name>Jasypt Spring Starter with aws KMS support</name>
     <issueManagement>
-    	<system>Github</system>
+        <system>Github</system>
+        <url>https://github.com/mustangxu/jasypt-spring-aws-kms-starter/issues</url>
     </issueManagement>
+    <description>This project add support to jasypt-spring which utlize aws KMS for encrypt / decrypt</description>
+    <scm>
+        <url>https://github.com/mustangxu/jasypt-spring-aws-kms-starter.git</url>
+        <developerConnection>Jay Xu</developerConnection>
+    </scm>
+    <organization>
+        <name>jayxu.com</name>
+    </organization>
 </project>
