@@ -27,7 +27,18 @@ jobs:
         server-password: OSSRH_PASSWORD
 
     - name: Publish to Sonatype Packages Apache Maven
-      run: mvn deploy -DskipTests -Prelease
+      run: mvn deploy -DskipTests --batch-mode
       env:
         OSSRH_USERNAME: jayxu
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+
+    - name: Set up Java for publishing to GitHub Packages
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Publish to GitHub Packages
+      run: mvn --batch-mode deploy -DskipTests
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
