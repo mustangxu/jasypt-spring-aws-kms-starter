@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.jayxu</groupId>
         <artifactId>jasypt-spring-aws-kms-starter-parent</artifactId>
-        <version>0.3</version>
+        <version>0.3-SNAPSHOT</version>
     </parent>
     <dependencies>
         <dependency>
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>com.jayxu</groupId>
             <artifactId>jasypt-spring-aws-kms-starter</artifactId>
-            <version>0.3</version>
+            <version>0.3-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
