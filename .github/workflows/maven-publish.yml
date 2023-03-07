@@ -27,7 +27,7 @@ jobs:
         server-password: OSSRH_PASSWORD
 
     - name: Publish to Sonatype Packages Apache Maven
-      run: mvn deploy -DskipTests 
+      run: mvn deploy -DskipTests -Prelease
       env:
         OSSRH_USERNAME: jayxu
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
