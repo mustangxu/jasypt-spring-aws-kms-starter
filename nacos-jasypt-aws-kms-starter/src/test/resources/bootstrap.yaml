@@ -1,0 +1,25 @@
+debug: false
+
+aws:
+  kms:
+    defaultKeyAlias: xujiajing
+    
+logging:
+  level:
+    com:
+      jayxu:
+        nacos:
+          starter:
+            KmsStringEncryptor: debug
+            EncryptorUtils: trace
+          demo:
+            KmsTest: trace
+spring:
+  cloud:
+    nacos:
+      config:
+        enabled: false
+      
+password:
+  - DEC(hello)
+  - DEC([xujiajing]hello)

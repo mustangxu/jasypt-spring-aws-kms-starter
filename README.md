@@ -1,0 +1,16 @@
+## Usage
+1. import lib in maven
+```xml
+<dependency>
+    <groupId>com.jayxu.nacos</groupId>
+    <artifactId>nacos-jasypt-aws-kms-starter</artifactId>
+    <version>0.3</version>
+</dependency>
+```
+2. define `aws.kms.defaultKeyAlias` in bootstrap config file, else the default Jasypt StringEncryptor will be used
+3. config aws `aws_access_key_id`, `aws_secret_access_key`, `region` properly according to [this article](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/ec2-iam-roles.html)
+
+## Tools
+1. start `nacos-demo` project as a spring boot project
+2. open `htttp://localhost:8088/swagger-ui.html` in browser
+3. the `default-controller` provides several tools for encrypt / decrypt by KMS (or default Jasypt StringEncryptor)
