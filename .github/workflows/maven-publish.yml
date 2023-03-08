@@ -26,14 +26,14 @@ jobs:
         distribution: 'adopt'
         server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
         server-username: jayxu
-        server-password: ${{ secrets.OSSRH_PASSWORD }}
+        server-password: OSSRH_PASSWORD
         gpg-private-key: ${{ secrets.GPG }}
 
     - name: Publish to Sonatype Packages Apache Maven
       run: mvn deploy -DskipTests --batch-mode -f jasypt-spring-aws-kms-starter/pom.xml
-#      env:
-#        OSSRH_USERNAME: jayxu
-#        OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+      env:
+        OSSRH_USERNAME: jayxu
+        OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
 
     - name: Set up Java for publishing to GitHub Packages
       uses: actions/setup-java@v3
