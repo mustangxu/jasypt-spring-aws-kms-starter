@@ -30,7 +30,7 @@ jobs:
         gpg-private-key: ${{ secrets.GPG }}
 
     - name: Publish to Sonatype Packages Apache Maven
-      run: mvn clean deploy -DskipTests --batch-mode -f jasypt-spring-aws-kms-starter/pom.xml -Prelease
+      run: mvn clean deploy -DskipTests --batch-mode -f jasypt-spring-aws-kms-starter/pom.xml -Psonatype
       env:
         OSSRH_USERNAME: jayxu
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
