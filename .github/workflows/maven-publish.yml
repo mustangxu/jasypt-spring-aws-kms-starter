@@ -28,14 +28,14 @@ jobs:
         server-username: OSSRH_USERNAME
         server-password: OSSRH_PASSWORD
         gpg-private-key: ${{ secrets.GPG }}
-        gpg-passphrase: MAVEN_GPG_PASSPHRASE
+        gpg-passphrase: GPG_PASSPHRASE
 
     - name: Publish to Sonatype Packages Apache Maven
       run: mvn clean deploy -DskipTests --batch-mode -f jasypt-spring-aws-kms-starter/pom.xml -Psonatype
       env:
         OSSRH_USERNAME: jayxu
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-        MAVEN_GPG_PASSPHRASE: ''
+        GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
     - name: Set up Java for publishing to GitHub Packages
       uses: actions/setup-java@v3
