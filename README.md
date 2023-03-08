@@ -8,7 +8,7 @@ This project add support to jasypt-spring which utlize aws KMS for encrypt / dec
 <dependency>
     <groupId>com.jayxu.nacos</groupId>
     <artifactId>nacos-jasypt-aws-kms-starter</artifactId>
-    <version>0.3</version>
+    <version>{version}</version>
 </dependency>
 ```
 2. define `aws.kms.defaultKeyAlias` in bootstrap config file, else the default Jasypt StringEncryptor will be used
