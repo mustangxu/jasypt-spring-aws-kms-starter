@@ -25,8 +25,8 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
-        server-username: 'jayxu'
-        server-password: ${{ secrets.OSSRH_PASSWORD }}
+        server-username: OSSRH_USERNAME
+        server-password: OSSRH_PASSWORD
         gpg-private-key: ${{ secrets.GPG }}
 
     - name: Publish to Sonatype Packages Apache Maven
