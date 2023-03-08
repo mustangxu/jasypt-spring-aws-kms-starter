@@ -8,8 +8,8 @@ This project add support to jasypt-spring which utlize aws KMS for encrypt / dec
 1. import lib in maven
 ```xml
 <dependency>
-    <groupId>com.jayxu.nacos</groupId>
-    <artifactId>nacos-jasypt-aws-kms-starter</artifactId>
+    <groupId>com.jayxu</groupId>
+    <artifactId>jasypt-spring-aws-kms-starter</artifactId>
     <version>{version}</version>
 </dependency>
 ```
