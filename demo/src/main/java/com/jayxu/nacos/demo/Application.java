@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author xujiajing
  */
-//@EnableEncryptableProperties
 @SpringBootApplication
 public class Application {
     @SuppressWarnings("resource")
