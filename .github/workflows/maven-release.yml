@@ -1,11 +1,11 @@
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
 
-name: Maven Publish
+name: Maven Release
 
 on:
-  push:
-    branches: [ "main" ]
+  release:
+    types: [created]
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
         gpg-passphrase: GPG_PASSPHRASE
 
     - name: Publish to Sonatype Maven
-      run: mvn clean deploy -DskipTests --batch-mode -f jasypt-spring-aws-kms-starter/pom.xml
+      run: mvn clean deploy -DskipTests --batch-mode -f jasypt-spring-aws-kms-starter/pom.xml -Prelease
       env:
         OSSRH_USERNAME: jayxu
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}

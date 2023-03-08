@@ -105,19 +105,7 @@
     </distributionManagement>
     <profiles>
         <profile>
-            <id>github</id>
-            <distributionManagement>
-                <repository>
-                    <id>github</id>
-                    <url>https://maven.pkg.github.com/mustangxu/jasypt-spring-aws-kms-starter</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-            </distributionManagement>
-        </profile>
-        <profile>
-            <id>sonatype</id>
+            <id>release</id>
             <build>
                 <plugins>
                     <plugin>
