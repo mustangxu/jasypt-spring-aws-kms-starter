@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jayxu</groupId>
     <artifactId>jasypt-spring-aws-kms-starter-parent</artifactId>
-    <version>0.4</version>
+    <version>0.5-SNAPSHOT</version>
     <packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -46,18 +46,4 @@
         <!--module>demo</module-->
         <module>jasypt-spring-aws-kms-starter</module>
     </modules>
-    <url>https://github.com/mustangxu/jasypt-spring-aws-kms-starter</url>
-    <name>Jasypt Spring Starter with aws KMS support</name>
-    <issueManagement>
-        <system>Github</system>
-        <url>https://github.com/mustangxu/jasypt-spring-aws-kms-starter/issues</url>
-    </issueManagement>
-    <description>This project add support to jasypt-spring which utlize aws KMS for encrypt / decrypt</description>
-    <scm>
-        <url>https://github.com/mustangxu/jasypt-spring-aws-kms-starter.git</url>
-        <developerConnection>Jay Xu</developerConnection>
-    </scm>
-    <organization>
-        <name>jayxu.com</name>
-    </organization>
 </project>
