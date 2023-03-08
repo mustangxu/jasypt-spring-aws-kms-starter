@@ -25,12 +25,12 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
-        server-username: jayxu
+        server-username: 'jayxu'
         server-password: OSSRH_PASSWORD
         gpg-private-key: ${{ secrets.GPG }}
 
     - name: Publish to Sonatype Packages Apache Maven
-      run: mvn deploy -DskipTests --batch-mode -f jasypt-spring-aws-kms-starter/pom.xml
+      run: mvn cneal deploy -DskipTests --batch-mode -f jasypt-spring-aws-kms-starter/pom.xml
       env:
         OSSRH_USERNAME: jayxu
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
@@ -42,6 +42,6 @@ jobs:
         distribution: 'adopt'
         
     - name: Publish to GitHub Packages
-      run: mvn --batch-mode deploy -DskipTests -Pgithub -f jasypt-spring-aws-kms-starter/pom.xml
+      run: mvn --batch-mode clean deploy -DskipTests -Pgithub -f jasypt-spring-aws-kms-starter/pom.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
