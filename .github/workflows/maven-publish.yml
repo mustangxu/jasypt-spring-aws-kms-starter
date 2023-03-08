@@ -23,8 +23,9 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
-        server-username: OSSRH_USERNAME
-        server-password: OSSRH_PASSWORD
+        server-username: jayxu
+        server-password: ${{ secrets.OSSRH_PASSWORD }}
+        gpg-private-key: ${{ secrets.GPG }}
 
     - name: Publish to Sonatype Packages Apache Maven
       run: mvn deploy -DskipTests --batch-mode -f jasypt-spring-aws-kms-starter/pom.xml
