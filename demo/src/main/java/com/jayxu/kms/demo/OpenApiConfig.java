@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.jayxu.kms.demo;
 
 import org.springframework.boot.info.BuildProperties;
@@ -12,16 +9,14 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 
 /**
- * @author xujiajing
+ * @author Jay Xu
  */
 @Configuration
 public class OpenApiConfig {
     @Bean
-    public OpenAPI springShopOpenAPI(BuildProperties build, GitProperties git) {
-        return new OpenAPI()
-            .info(new Info().title("Nacos Demo")
-                .version(String.format("v%s-%s @%s",
-                    build.getVersion(), git.getShortCommitId(),
-                    git.getCommitTime())));
+    OpenAPI springShopOpenAPI(BuildProperties build, GitProperties git) {
+        return new OpenAPI().info(new Info().title("Nacos Demo")
+            .version(String.format("v%s-%s @%s", build.getVersion(),
+                git.getShortCommitId(), git.getCommitTime())));
     }
 }

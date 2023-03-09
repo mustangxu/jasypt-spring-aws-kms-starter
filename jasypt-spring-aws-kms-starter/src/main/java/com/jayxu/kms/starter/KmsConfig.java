@@ -11,6 +11,9 @@ import org.springframework.context.annotation.Primary;
 import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.services.kms.KmsClient;
 
+/**
+ * @author Jay Xu
+ */
 @Configuration
 @ComponentScan(basePackages = "com.jayxu.kms.starter")
 @Slf4j

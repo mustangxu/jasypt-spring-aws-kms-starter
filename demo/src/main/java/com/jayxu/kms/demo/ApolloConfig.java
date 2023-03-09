@@ -1,6 +1,3 @@
-/**
- * Authored by jayxu @2022
- */
 package com.jayxu.kms.demo;
 
 import java.util.Date;
@@ -9,7 +6,7 @@ import java.util.List;
 import lombok.Value;
 
 /**
- * @author xujiajing
+ * @author Jay Xu
  */
 @Value
 public class ApolloConfig {

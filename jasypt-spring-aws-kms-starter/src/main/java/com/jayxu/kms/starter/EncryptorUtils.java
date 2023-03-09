@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.XSlf4j;
 
+/**
+ * @author Jay Xu
+ */
 @Component
 @XSlf4j
 public class EncryptorUtils {
@@ -38,8 +41,7 @@ public class EncryptorUtils {
             return (T) this.encryptMap((Map) o);
         }
 
-        if (o instanceof List) {
-            var l = (List) o;
+        if (o instanceof List l) {
             l.replaceAll(this::encryptObject);
 
             return (T) l;

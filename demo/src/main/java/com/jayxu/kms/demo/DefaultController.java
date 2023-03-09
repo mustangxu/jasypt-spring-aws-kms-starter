@@ -29,6 +29,9 @@ import com.jayxu.kms.starter.KmsStringEncryptor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.XSlf4j;
 
+/**
+ * @author Jay Xu
+ */
 @RefreshScope
 @RestController
 @XSlf4j

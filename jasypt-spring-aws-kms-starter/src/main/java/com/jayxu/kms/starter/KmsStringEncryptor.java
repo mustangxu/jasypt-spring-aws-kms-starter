@@ -14,6 +14,9 @@ import software.amazon.awssdk.services.kms.KmsClient;
 import software.amazon.awssdk.services.kms.model.DecryptRequest;
 import software.amazon.awssdk.services.kms.model.EncryptRequest;
 
+/**
+ * @author Jay Xu
+ */
 @XSlf4j
 public final class KmsStringEncryptor implements StringEncryptor {
     public static final String KEY_DEFAULT_KEY_ALIAS = "aws.kms.defaultKeyAlias";

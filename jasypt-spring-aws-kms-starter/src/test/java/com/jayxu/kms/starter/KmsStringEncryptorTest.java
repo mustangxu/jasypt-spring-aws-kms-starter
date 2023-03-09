@@ -11,15 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.DumperOptions.FlowStyle;
-
-import com.jayxu.kms.starter.EncryptorUtils;
-import com.jayxu.kms.starter.KmsConfig;
-import com.jayxu.kms.starter.KmsStringEncryptor;
-
 import org.yaml.snakeyaml.Yaml;
 
 import lombok.extern.slf4j.XSlf4j;
 
+/**
+ * @author Jay Xu
+ */
 @SpringBootTest(classes = KmsConfig.class)
 @XSlf4j
 @SuppressWarnings("resource")

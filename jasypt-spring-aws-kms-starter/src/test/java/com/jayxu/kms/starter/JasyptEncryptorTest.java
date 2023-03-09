@@ -5,6 +5,9 @@ import org.jasypt.iv.RandomIvGenerator;
 import org.jasypt.salt.RandomSaltGenerator;
 import org.junit.jupiter.api.Test;
 
+/**
+ * @author Jay Xu
+ */
 public class JasyptEncryptorTest {
     @Test
     void test() {

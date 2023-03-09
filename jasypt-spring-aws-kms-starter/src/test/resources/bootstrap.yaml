@@ -14,12 +14,7 @@ logging:
             EncryptorUtils: trace
           demo:
             KmsTest: trace
-spring:
-  cloud:
-    nacos:
-      config:
-        enabled: false
-      
+
 password:
   - DEC(hello)
   - DEC([xujiajing]hello)

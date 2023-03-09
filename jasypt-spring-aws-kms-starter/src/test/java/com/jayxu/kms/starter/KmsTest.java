@@ -11,6 +11,9 @@ import software.amazon.awssdk.services.kms.KmsClient;
 import software.amazon.awssdk.services.kms.model.DecryptRequest;
 import software.amazon.awssdk.services.kms.model.EncryptRequest;
 
+/**
+ * @author Jay Xu
+ */
 class KmsTest {
     @Test
     void test() {
