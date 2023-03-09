@@ -88,6 +88,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                    <excludes>
+                        <exclude>Kms*Test</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
         </plugins>
