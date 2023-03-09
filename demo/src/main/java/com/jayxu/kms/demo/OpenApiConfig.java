@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.jayxu.nacos.demo;
+package com.jayxu.kms.demo;
 
 import org.springframework.boot.info.BuildProperties;
 import org.springframework.boot.info.GitProperties;

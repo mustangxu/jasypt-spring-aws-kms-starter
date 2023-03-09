@@ -1,4 +1,4 @@
-package com.jayxu.nacos.starter;
+package com.jayxu.kms.starter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

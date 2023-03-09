@@ -1,4 +1,4 @@
-package com.jayxu.nacos.starter;
+package com.jayxu.kms.starter;
 
 import java.util.Map;
 import java.util.Properties;
@@ -11,11 +11,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.DumperOptions.FlowStyle;
+
+import com.jayxu.kms.starter.EncryptorUtils;
+import com.jayxu.kms.starter.KmsConfig;
+import com.jayxu.kms.starter.KmsStringEncryptor;
+
 import org.yaml.snakeyaml.Yaml;
 
 import lombok.extern.slf4j.XSlf4j;
 
-@SpringBootTest(classes = NacosConfig.class)
+@SpringBootTest(classes = KmsConfig.class)
 @XSlf4j
 @SuppressWarnings("resource")
 class KmsStringEncryptorTest {

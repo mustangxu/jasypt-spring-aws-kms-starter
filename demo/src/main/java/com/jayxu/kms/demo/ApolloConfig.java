@@ -1,7 +1,7 @@
 /**
  * Authored by jayxu @2022
  */
-package com.jayxu.nacos.demo;
+package com.jayxu.kms.demo;
 
 import java.util.Date;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.jayxu.nacos.demo;
+package com.jayxu.kms.demo;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -23,8 +23,8 @@ import org.yaml.snakeyaml.DumperOptions.FlowStyle;
 import org.yaml.snakeyaml.Yaml;
 
 import com.alibaba.cloud.nacos.NacosConfigManager;
-import com.jayxu.nacos.starter.EncryptorUtils;
-import com.jayxu.nacos.starter.KmsStringEncryptor;
+import com.jayxu.kms.starter.EncryptorUtils;
+import com.jayxu.kms.starter.KmsStringEncryptor;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.XSlf4j;

@@ -1,9 +1,10 @@
-package com.jayxu.nacos.starter;
+package com.jayxu.kms.starter;
 
 import java.util.Base64;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.util.Strings;
 import org.jasypt.encryption.StringEncryptor;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -16,9 +17,12 @@ import software.amazon.awssdk.services.kms.model.EncryptRequest;
 @XSlf4j
 public final class KmsStringEncryptor implements StringEncryptor {
     public static final String KEY_DEFAULT_KEY_ALIAS = "aws.kms.defaultKeyAlias";
+    public static final String KEY_DEFAULT_KEY_ID = "aws.kms.defaultKeyId";
     // message pattern: {ENC|DEC}([key alias]xxxxxxxxxxxxxxxxxxxxxxx)
+    private static final Pattern KEY_ALIAS_PATTERN = Pattern
+        .compile("\\[alias:(.+)\\](.+)");
     private static final Pattern KEY_ID_PATTERN = Pattern
-        .compile("\\[(.+)\\](.+)");
+        .compile("\\[id:(.+)\\](.+)");
     private static final String ALIAS_PREFIX = "alias/";
     private KmsClient kms;
     @Value("${" + KEY_DEFAULT_KEY_ALIAS + ":nacos-demo-key}")
@@ -35,6 +39,10 @@ public final class KmsStringEncryptor implements StringEncryptor {
     }
 
     public String encrypt(String keyId, final String message) {
+        if (Strings.isBlank(keyId)) {
+            keyId = this.defaultKeyAlias;
+        }
+
         var newKeyId = KmsStringEncryptor.ALIAS_PREFIX + keyId;
 
         var req = EncryptRequest.builder().keyId(newKeyId)
@@ -55,6 +63,10 @@ public final class KmsStringEncryptor implements StringEncryptor {
     }
 
     public String decrypt(String keyId, final String encryptedMessage) {
+        if (Strings.isBlank(keyId)) {
+            keyId = this.defaultKeyAlias;
+        }
+
         var newKeyId = KmsStringEncryptor.ALIAS_PREFIX + keyId;
 
         KmsStringEncryptor.log.debug("Decrypting: [{}]{}", newKeyId,
@@ -72,7 +84,7 @@ public final class KmsStringEncryptor implements StringEncryptor {
 
     private String[] parseKeyId(final String message) {
         KmsStringEncryptor.log.entry(message);
-        var matcher = KmsStringEncryptor.KEY_ID_PATTERN.matcher(message);
+        var matcher = KmsStringEncryptor.KEY_ALIAS_PATTERN.matcher(message);
         var alias = matcher.matches() ? matcher.group(1) : this.defaultKeyAlias;
 
         String[] res = { alias,

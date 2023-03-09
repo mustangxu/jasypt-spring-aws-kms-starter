@@ -1,2 +1,2 @@
 org.springframework.cloud.bootstrap.BootstrapConfiguration=\
-  com.jayxu.nacos.starter.NacosConfig
+  com.jayxu.kms.starter.KmsConfig

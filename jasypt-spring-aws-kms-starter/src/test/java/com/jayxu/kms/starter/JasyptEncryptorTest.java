@@ -1,4 +1,4 @@
-package com.jayxu.nacos.starter;
+package com.jayxu.kms.starter;
 
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.iv.RandomIvGenerator;

@@ -1,4 +1,4 @@
-package com.jayxu.nacos.starter;
+package com.jayxu.kms.starter;
 
 import org.jasypt.encryption.StringEncryptor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -12,13 +12,14 @@ import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.services.kms.KmsClient;
 
 @Configuration
-@ComponentScan(basePackages = "com.jayxu.nacos.starter")
+@ComponentScan(basePackages = "com.jayxu.kms.starter")
 @Slf4j
 @ConditionalOnClass(KmsStringEncryptor.class)
-public class NacosConfig {
+public class KmsConfig {
     @Primary
     @Bean("jasyptStringEncryptor") // override default jasyptStringEncryptor
-    @ConditionalOnProperty(KmsStringEncryptor.KEY_DEFAULT_KEY_ALIAS) // use default StringEncryptor if missed
+    @ConditionalOnProperty({ KmsStringEncryptor.KEY_DEFAULT_KEY_ALIAS,
+        KmsStringEncryptor.KEY_DEFAULT_KEY_ID }) // use default StringEncryptor if missed
     public StringEncryptor jasyptStringEncryptor() {
         log.info("Initializing KmsStringEncryptor");
         // 按https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/ec2-iam-roles.html
