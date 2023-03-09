@@ -45,14 +45,15 @@ class KmsStringEncryptorTest {
         if (this.enc instanceof KmsStringEncryptor) {
             var pk = p.startNested("kms");
 
-            var keyid = "xujiajing";
+            var keyid = "alias/xujiajing";
             pk.start("encrypt");
 
             var kms = (KmsStringEncryptor) this.enc;
             encrypt = kms.encrypt(keyid, raw);
 //            System.out.println(encrypt);
             try {
-                kms.decrypt("", encrypt.substring(encrypt.indexOf(']') + 1));
+                kms.decrypt("alias/hello",
+                    encrypt.substring(encrypt.indexOf(']') + 1));
                 Assertions.fail("should fail");
             } catch (Exception ex) {
                 KmsStringEncryptorTest.log.catching(ex);

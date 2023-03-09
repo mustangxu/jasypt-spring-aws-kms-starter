@@ -2,19 +2,20 @@ debug: false
 
 aws:
   kms:
-    defaultKeyAlias: xujiajing
+    defaultKeyId: alias/xujiajing
     
 logging:
   level:
     com:
       jayxu:
-        nacos:
+        kms:
           starter:
-            KmsStringEncryptor: debug
+            KmsStringEncryptor: trace
             EncryptorUtils: trace
           demo:
             KmsTest: trace
 
 password:
   - DEC(hello)
-  - DEC([xujiajing]hello)
+  - DEC([alias/xujiajing]hello)
+  - DEC([5272f855-d910-481f-964c-cc7c8ef9dc93]hello)

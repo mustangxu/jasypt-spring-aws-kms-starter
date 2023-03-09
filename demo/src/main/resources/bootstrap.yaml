@@ -27,4 +27,5 @@ spring:
 
 aws:
   kms:
-    defaultKeyAlias: xujiajing
+#    defaultKeyId: alias/xujiajing
+    defaultKeyId: 5272f855-d910-481f-964c-cc7c8ef9dc93

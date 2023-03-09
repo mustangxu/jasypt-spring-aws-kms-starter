@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Properties;
 
 import org.apache.commons.io.IOUtils;
@@ -36,8 +37,8 @@ import lombok.extern.slf4j.XSlf4j;
 @RestController
 @XSlf4j
 public class DefaultController {
-    @Value("${" + KmsStringEncryptor.KEY_DEFAULT_KEY_ALIAS + ":#{null}}")
-    private String alias;
+    @Value("${" + KmsStringEncryptor.KEY_DEFAULT_KEY_ID + ":}")
+    private String keyId;
     @Autowired
     private KmsStringEncryptor enc;
     @Autowired
@@ -49,23 +50,21 @@ public class DefaultController {
     @Value("${spring.cloud.nacos.config.group}")
     private String group;
 
-    @GetMapping("/alias")
-    public String getAlias() {
-        return this.alias;
+    @GetMapping("/keyId")
+    public String getKeyId() {
+        return this.keyId;
     }
 
-    @GetMapping("/enc")
-    public String encrypt(
-            @RequestParam(defaultValue = "nacos-demo-key") String keyid,
-            @RequestParam String raw) {
-        return "ENC([" + keyid + "]" + this.enc.encrypt(keyid, raw) + ')';
+    @PostMapping("/enc")
+    public String encrypt(@RequestParam Optional<String> keyid,
+            @RequestBody String raw) {
+        return "[" + keyid.orElse(this.keyId) + "]"
+            + this.enc.encrypt(keyid.orElse(this.keyId), raw);
     }
 
     @PostMapping("/dec")
-    public String decrypt(
-            @RequestParam(defaultValue = "nacos-demo-key") String keyid,
-            @RequestBody String msg) {
-        return this.enc.decrypt("alias/" + keyid, msg);
+    public String decrypt(@RequestBody String msg) {
+        return this.enc.decrypt(msg);
     }
 
     @GetMapping("/env")
