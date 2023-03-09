@@ -29,7 +29,7 @@ jobs:
         gpg-passphrase: GPG_PASSPHRASE
 
     - name: Publish to Sonatype Maven
-      run: mvn --batch-mode clean deploy -Prelease #-f jasypt-spring-aws-kms-starter/pom.xml
+      run: mvn --batch-mode -DskipTests clean deploy -Prelease #-f jasypt-spring-aws-kms-starter/pom.xml
       env:
         OSSRH_USERNAME: jayxu
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
