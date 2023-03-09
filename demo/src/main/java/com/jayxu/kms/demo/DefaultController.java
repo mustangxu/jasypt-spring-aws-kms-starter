@@ -23,7 +23,6 @@ import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.DumperOptions.FlowStyle;
 import org.yaml.snakeyaml.Yaml;
 
-import com.alibaba.cloud.nacos.NacosConfigManager;
 import com.jayxu.kms.starter.EncryptorUtils;
 import com.jayxu.kms.starter.KmsStringEncryptor;
 
@@ -45,10 +44,6 @@ public class DefaultController {
     private Environment env;
     @Autowired
     private EncryptorUtils utils;
-    @Autowired
-    private NacosConfigManager nacosManager;
-    @Value("${spring.cloud.nacos.config.group}")
-    private String group;
 
     @GetMapping("/keyId")
     public String getKeyId() {
@@ -72,17 +67,9 @@ public class DefaultController {
         return this.env.getProperty(key);
     }
 
-    @GetMapping("/enc/file")
+    @PostMapping("/enc/file")
     @SneakyThrows
-    public String encFile(@RequestParam String filename) {
-        try (var is = DefaultController.class.getResourceAsStream(filename)) {
-            return this.doEncFile(filename, is);
-        }
-    }
-
-    @PostMapping("/enc/content")
-    @SneakyThrows
-    public String encContent(@RequestPart MultipartFile file) {
+    public String encFile(@RequestPart MultipartFile file) {
         try (var is = file.getInputStream()) {
             return this.doEncFile(file.getOriginalFilename(), is);
         }
@@ -115,13 +102,5 @@ public class DefaultController {
                 return log.exit(this.enc
                     .encrypt(IOUtils.toString(is, StandardCharsets.UTF_8)));
         }
-    }
-
-    @SneakyThrows
-    @PostMapping("/apollo")
-    public boolean postApollo(@RequestBody ApolloConfig apollo) {
-        return this.nacosManager.getConfigService().publishConfig(
-            apollo.getNamespaceName(), apollo.getAppId(),
-            apollo.getItems().get(0).getValue());
     }
 }

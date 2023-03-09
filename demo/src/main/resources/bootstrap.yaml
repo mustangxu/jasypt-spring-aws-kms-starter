@@ -9,21 +9,18 @@ spring:
       username: nacos
       password: ENC(AQICAHiQg5AqLyyZydfj02ArTEmRuHyBmoK6eOM0Wa8q94v4nAFMaYVV9k3AqhCGRKe9wDjCAAAAYzBhBgkqhkiG9w0BBwagVDBSAgEAME0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMGc9ZSkHwwZgxEhhiAgEQgCDKebv4ugmGVYh72MGk/gOYQ7FrP2wF1Qf+P1ZvW4Zfnw==) #nacos
 # 或者指定key alias
-#      password: ENC([xujiajing]AQICAHiQg5AqLyyZydfj02ArTEmRuHyBmoK6eOM0Wa8q94v4nAFMaYVV9k3AqhCGRKe9wDjCAAAAYzBhBgkqhkiG9w0BBwagVDBSAgEAME0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMGc9ZSkHwwZgxEhhiAgEQgCDKebv4ugmGVYh72MGk/gOYQ7FrP2wF1Qf+P1ZvW4Zfnw==) #nacos
+#      password: ENC([alias/xujiajing]AQICAHiQg5AqLyyZydfj02ArTEmRuHyBmoK6eOM0Wa8q94v4nAFMaYVV9k3AqhCGRKe9wDjCAAAAYzBhBgkqhkiG9w0BBwagVDBSAgEAME0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMGc9ZSkHwwZgxEhhiAgEQgCDKebv4ugmGVYh72MGk/gOYQ7FrP2wF1Qf+P1ZvW4Zfnw==) #nacos
 #      password: nacos
 #      server-addr: 127.0.0.1:8848
-      discovery:
-        namespace: 1ca7acb3-1b3c-448d-8b02-cc499bab45d5
-        group: DEMO
       config:
         server-addr: 127.0.0.1:8848
         namespace: 1ca7acb3-1b3c-448d-8b02-cc499bab45d5
         group: DEMO
         file-extension: yaml
 
-#jasypt:
-#  encryptor:
-#    password: fallback
+jasypt:
+  encryptor:
+    password: fallback
 
 aws:
   kms:
