@@ -13,8 +13,13 @@ This project add support to jasypt-spring which utlize aws KMS for encrypt / dec
     <version>{version}</version>
 </dependency>
 ```
-2. define `aws.kms.defaultKeyAlias` in bootstrap config file, else the default Jasypt StringEncryptor will be used
+2. define `aws.kms.defaultKeyId` in bootstrap config file, else the default Jasypt StringEncryptor will be used
 3. config aws `aws_access_key_id`, `aws_secret_access_key`, `region` properly according to [this article](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/ec2-iam-roles.html)
+4. you can use multiple keyIds in one project:
+```
+ENC(xxxxxxxxxx) // will use aws.kms.defaultKeyId to decrypt, same as ENC([${aws.kms.defaultKeyId}]xxxxxxxxxx)
+ENC([another-key-id]xxxxxxxxxx) // will use another-key-id to decrypt
+```
 
 ## Tools
 1. start `nacos-demo` project as a spring boot project
