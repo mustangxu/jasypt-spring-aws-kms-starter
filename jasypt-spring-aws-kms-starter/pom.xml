@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.jayxu</groupId>
         <artifactId>jasypt-spring-aws-kms-starter-parent</artifactId>
-        <version>0.6</version>
+        <version>0.7-SNAPSHOT</version>
     </parent>
     <artifactId>jasypt-spring-aws-kms-starter</artifactId>
     <url>https://github.com/mustangxu/jasypt-spring-aws-kms-starter</url>
@@ -55,10 +55,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
