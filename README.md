@@ -4,7 +4,7 @@ This project add support to jasypt-spring which utlize aws KMS for encrypt / dec
 [![Maven Publish](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/maven-publish.yml)
 [![Maven Release](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/maven-release.yml/badge.svg)](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/maven-release.yml)
 
-## Usage
+# Usage
 1. import lib in maven
 ```xml
 <dependency>
@@ -21,7 +21,7 @@ ENC(xxxxxxxxxx) // will use aws.kms.defaultKeyId to decrypt, same as ENC([${aws.
 ENC([another-key-id]xxxxxxxxxx) // will use another-key-id to decrypt
 ```
 
-## Tools
+# Tools
 1. start `nacos-demo` project as a spring boot project
 2. open `htttp://localhost:8088/swagger-ui.html` in browser
 3. the `default-controller` provides several tools for encrypt / decrypt by KMS (or default Jasypt StringEncryptor)
