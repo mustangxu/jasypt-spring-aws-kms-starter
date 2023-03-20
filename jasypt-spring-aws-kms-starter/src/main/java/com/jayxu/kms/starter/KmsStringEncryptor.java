@@ -3,7 +3,6 @@ package com.jayxu.kms.starter;
 import java.util.Base64;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.StringUtils;
 import org.jasypt.encryption.StringEncryptor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.Assert;
@@ -61,7 +60,7 @@ public final class KmsStringEncryptor implements StringEncryptor {
         Assert.hasText(keyId, "keyId is required");
 
         KmsStringEncryptor.log.debug("Decrypting: [{}]{}", keyId,
-            StringUtils.abbreviateMiddle(encryptedMessage, "...", 64));
+            encryptedMessage);
 
         var req = DecryptRequest.builder().keyId(keyId)
             .ciphertextBlob(SdkBytes
@@ -74,7 +73,7 @@ public final class KmsStringEncryptor implements StringEncryptor {
     }
 
     private String[] parseKeyId(final String message) {
-        KmsStringEncryptor.log.entry(message);
+        KmsStringEncryptor.log.entry("parseKeyId", message);
 
         String[] res;
 

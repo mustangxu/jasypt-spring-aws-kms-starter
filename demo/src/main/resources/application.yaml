@@ -1,2 +1,6 @@
 server:
   port: 8088
+  
+logging:
+  level:
+    com.jayxu.kms: info
