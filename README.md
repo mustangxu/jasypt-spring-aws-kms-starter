@@ -4,6 +4,10 @@ This project add support to jasypt-spring utilizing aws KMS for encrypt / decryp
 [![Maven Publish](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/maven-publish.yml)
 [![Maven Release](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/maven-release.yml/badge.svg)](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/maven-release.yml)
 
+[![Maven Central](https://img.shields.io/maven-central/v/com.jayxu/jasypt-spring-aws-kms-starter)](https://search.maven.org/artifact/com.jayxu/jasypt-spring-aws-kms-starter)
+
+
+
 ## Usage
 1. import lib in maven
 ```xml
