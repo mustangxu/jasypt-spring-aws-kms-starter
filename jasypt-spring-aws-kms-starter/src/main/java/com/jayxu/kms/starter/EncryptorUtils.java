@@ -34,7 +34,7 @@ public class EncryptorUtils {
     @SuppressWarnings("rawtypes")
     public <T> T processObject(T o, UnaryOperator<String> encryptOrDecrypt) {
         if (o == null) {
-            return o;
+            return null;
         }
 
         EncryptorUtils.log.entry("processObject", o, o.getClass());

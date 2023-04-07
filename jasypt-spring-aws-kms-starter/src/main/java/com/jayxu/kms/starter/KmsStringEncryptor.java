@@ -4,6 +4,7 @@ import java.util.Base64;
 import java.util.regex.Pattern;
 
 import org.jasypt.encryption.StringEncryptor;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.Assert;
 
@@ -17,17 +18,19 @@ import software.amazon.awssdk.services.kms.model.EncryptRequest;
  * @author Jay Xu
  */
 @XSlf4j
-public final class KmsStringEncryptor implements StringEncryptor {
+public final class KmsStringEncryptor
+        implements StringEncryptor, DisposableBean {
     public static final String KEY_DEFAULT_KEY_ID = "aws.kms.defaultKeyId";
     // message pattern: {ENC|DEC}([key alias]xxxxxxxxxxxxxxxxxxxxxxx)
     private static final Pattern KEY_ID_PATTERN = Pattern
-        .compile("\\[(.+)\\](.+)");
+        .compile("\\[(.+)](.+)");
     private KmsClient kms;
     @Value("${" + KEY_DEFAULT_KEY_ID + ":}")
     private String defaultKeyId;
 
-    public KmsStringEncryptor(KmsClient kms) {
-        this.kms = kms;
+    public KmsStringEncryptor() {
+        this.kms = KmsClient.builder().build();
+        log.info("KMS client {} initialized", this.kms);
     }
 
     @Override
@@ -87,4 +90,11 @@ public final class KmsStringEncryptor implements StringEncryptor {
         return KmsStringEncryptor.log.exit(res);
     }
 
+    @Override
+    public void destroy() throws Exception {
+        if (this.kms != null) {
+            this.kms.close();
+            log.info("KMS client {} closed", this.kms);
+        }
+    }
 }
