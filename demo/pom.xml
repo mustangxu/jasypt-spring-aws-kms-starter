@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.jayxu</groupId>
         <artifactId>jasypt-spring-aws-kms-starter-parent</artifactId>
-        <version>0.8-SNAPSHOT</version>
+        <version>0.8</version>
     </parent>
     <properties>
         <snakeyaml.version>2.0</snakeyaml.version>
