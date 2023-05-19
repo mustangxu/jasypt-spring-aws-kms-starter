@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jayxu</groupId>
     <artifactId>jasypt-spring-aws-kms-starter-parent</artifactId>
-    <version>0.8-SNAPSHOT</version>
+    <version>0.8</version>
     <packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
