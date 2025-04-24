@@ -91,7 +91,7 @@ public final class KmsStringEncryptor
     }
 
     @Override
-    public void destroy() throws Exception {
+    public void destroy() {
         if (this.kms != null) {
             this.kms.close();
             log.info("KMS client {} closed", this.kms);
