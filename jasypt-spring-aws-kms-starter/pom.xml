@@ -4,35 +4,10 @@
     <parent>
         <groupId>com.jayxu</groupId>
         <artifactId>jasypt-spring-aws-kms-starter-parent</artifactId>
-        <version>0.9-SNAPSHOT</version>
+        <version>0.9.1</version>
     </parent>
     <artifactId>jasypt-spring-aws-kms-starter</artifactId>
-    <url>https://github.com/mustangxu/jasypt-spring-aws-kms-starter</url>
     <name>Jasypt Spring Starter with aws KMS support</name>
-    <issueManagement>
-        <system>Github</system>
-        <url>https://github.com/mustangxu/jasypt-spring-aws-kms-starter/issues</url>
-    </issueManagement>
-    <description>This project add support to jasypt-spring which utlize aws KMS for encrypt / decrypt</description>
-    <scm>
-        <url>https://github.com/mustangxu/jasypt-spring-aws-kms-starter.git</url>
-        <developerConnection>Jay Xu</developerConnection>
-    </scm>
-    <organization>
-        <name>jayxu.com</name>
-    </organization>
-    <developers>
-        <developer>
-            <name>Jay Xu</name>
-            <email>mustangxu@gmail.com</email>
-        </developer>
-    </developers>
-    <licenses>
-        <license>
-            <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
     <dependencies>
         <dependency>
             <groupId>com.github.ulisesbocchio</groupId>
