@@ -57,7 +57,7 @@
         </dependencies>
     </dependencyManagement>
     <modules>
-        <!--module>demo</module-->
+        <module>demo</module>
         <module>jasypt-spring-aws-kms-starter</module>
     </modules>
     <build>
