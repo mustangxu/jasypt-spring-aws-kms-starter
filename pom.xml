@@ -81,9 +81,9 @@
                         </goals>
                     </execution>
                 </executions>
-<!--                <configuration>-->
-<!--                    <keyname>B18134628418C110</keyname>-->
-<!--                </configuration>-->
+                <configuration>
+                    <keyname>B18134628418C110</keyname>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
