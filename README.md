@@ -1,8 +1,6 @@
 This project add support to jasypt-spring utilizing aws KMS for encrypt / decrypt
 
 [![CodeQL](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/codeql.yml/badge.svg)](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/codeql.yml)
-[![Qodana](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/qodana.yml/badge.svg)](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/qodana.yml)
-[![Maven Publish](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/mustangxu/jasypt-spring-aws-kms-starter/actions/workflows/maven-publish.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/com.jayxu/jasypt-spring-aws-kms-starter)](https://search.maven.org/artifact/com.jayxu/jasypt-spring-aws-kms-starter)
 
 ## Usage
